@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+    
+    {% block content %}
+    <div class="site-blocks-cover overlay" style="background-image: url('./static/images/diag1.jpg')" data-aos="fade" >
+    <div class="col-md-12 text-center">
+        <h2 style="color: white;">View Patient Test Details</h2></style>
+        <br>
+        <p> Name of the Test : {{ data.test_name }}</p>
+        <p> Amount           : {{ data.amount }}</p>
+        <!-- <div>
+            <table class="table table-hover">
+                <thead>
+                <tr>
+                    <th scope="col">test_name</th>
+                    <th scope="col">amount</th>
+                </tr>
+                </thead>
+                <tbody>
+                 Construct the rest of courses here -->
+                {% for data in TestDetails %}
+                <tr>
+                    <td scope='row'>{{ data["test_name"] }}</td>
+                    <td>{{ data["amount"] }}</td>
+                    <td>
+                        <form action="{{url_for('test')}}" method="POST">
+                            <input type="hidden" name="test_name" value="{{data['test_name']}}">
+                            <input type="hidden" name="amount" value="{{data['amount']}}">
+                        <button>Bill </button>
+                    </form>
+                    </td>
+                </tr>
+                {% endfor %}
+                
+                </tbody>
+            </table>
+        </div> 
+    </div>
+</div>
+    {% endblock %}

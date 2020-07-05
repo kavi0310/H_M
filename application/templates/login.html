@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+   
+    {% block content %}
+    <div class="site-blocks-cover overlay" style="background-image: url('./static/images/view1.png')" data-aos="fade" >
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <h1></h1>
+            <form name="login" action="" method="post">
+                <fieldset class="form-group">
+                    <legend>{{title}}</legend> 
+
+                    {{ form.hidden_tag() }}
+
+                    <p>
+                        {{ form.name.label }}<br>
+                        {{ form.name(size=30) }}
+                        {% for error in form.name.errors %}
+                            <span class="error-message">{{ error }}</span>
+                        {% endfor %}
+                    </p>
+                    <p>
+                        {{ form.password.label }}<br>
+                        {{ form.password(size=15) }}
+                        {% for error in form.password.errors %}
+                            <span class="error-message">{{ error }}</span>
+                        {% endfor %}
+                    </p>
+
+                    <p>
+                        {{ form.submit() }}
+                    </p>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+    </div>
+ {% endblock %}

@@ -1,0 +1,17 @@
+    <header>
+        <nav>
+            <ul class="nav nav-pills">
+                <li class="nav-item"><a href="{{ url_for('index') }}" class="nav-link {% if index %}active{% endif %}">Home</a></li>
+                <li class="nav-item"><a href="{{ url_for('login') }}" class="nav-link {% if login %}active{% endif %} ">Login</a></li>
+                <li class="nav-item"><a href="{{ url_for('registration') }}" class="nav-link {% if registration %}active{% endif %}">Patient</a></li>
+                <!-- <li class="nav-item"><a href="{{ url_for('update') }}" class="nav-link {% if update %}active{% endif %}">Update</a></li>
+                <li class="nav-item"><a href="{{ url_for('delete') }}" class="nav-link {% if delete %}active{% endif %}">Delete</a></li> -->
+                <li class="nav-item"><a href="{{ url_for('viewdetails') }}" class="nav-link {% if viewdetails %}active{% endif %}">View</a></li>
+                <li class="nav-item"><a href="{{ url_for('pharmacy') }}" class="nav-link {% if pharmacy %}active{% endif %}">Pharmacy</a></li>
+                <!-- <li class="nav-item"><a href="{{ url_for('medicine') }}" class="nav-link {% if medicine %}active{% endif %}">Medicine</a></li> -->
+                <li class="nav-item"><a href="{{ url_for('diagnostics') }}" class="nav-link {% if diagnostics %}active{% endif %}">Diagnostics</a></li>
+                <!-- <li class="nav-item"><a href="{{ url_for('billing') }}" class="nav-link {% if billing %}active{% endif %}">Patient Bill</a></li> -->
+            </ul>
+        </nav>
+        <hr style="clear:both">
+    </header>

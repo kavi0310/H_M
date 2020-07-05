@@ -1,0 +1,71 @@
+
+    {% extends "layout.html" %}
+    
+    {% block content %}
+    <div class="site-blocks-cover overlay" style="background-image: url('./static/images/preg2.jpg')" data-aos="fade" >
+    <div class="col-md-12 text-center">
+        <div class="unit-4-icon">
+            <img src="/static/images/1.png" width="100" height="100" >
+          </div>
+        <h2 style="color: darkcyan;">View Patient Details</h2></style>
+        <br>
+    
+    <div>
+        <table class="table table-hover">
+            <thead>
+            <tr>
+                <th scope="col">Patient ID</th>
+                <th scope="col">Patient Name</th>
+                <th scope="col">Patient Age</th>
+                <th scope="col">Date of Join</th>
+                <th scope="col">Type of Bed</th>
+                <th scope="col">Address</th>
+                <th scope="col">City</th>
+                <th scope="col">State</th>
+            </tr>
+            </thead>
+            <tbody>
+
+            <!-- Construct the rest of courses here -->
+            {% for data in PatientDetails %}
+            <tr>
+                <td scope='row'>{{ data["patient_id"] }}</td>
+                <td>{{ data["patient_name"] }}</td>
+                <td>{{ data["patient_age"] }}</td>
+                <td>{{ data["date_of_join"] }}</td>
+                <td>{{ data["type_of_bed"] }}</td>
+                <td>{{ data["address"] }}</td>
+                <td>{{ data["city"] }}</td>
+                <td>{{ data["state"] }}</td>
+                <td>
+                    <form action="{{url_for('pharmacy')}}" method="POST">
+                        <input type="hidden" name="patient_id" value="{{data['patient_id']}}">
+                        <input type="hidden" name="patient_name" value="{{data['patient_name']}}">
+                        <input type="hidden" name="patient_age" value="{{data['patient_age']}}">
+                        <input type="hidden" name="date_of_join" value="{{data['date_of_join']}}">
+                        <input type="hidden" name="type_of_bed" value="{{data['type_of_bed']}}">
+                        <input type="hidden" name="address" value="{{data['address']}}">
+                        <input type="hidden" name="address" value="{{data['city']}}">
+                        <input type="hidden" name="address" value="{{data['state']}}">
+                    <button>Pharmacy-Medicine</button>
+                    </form><br>
+                    <form action="{{url_for('diagnostics')}}" method="POST">
+                        <input type="hidden" name="patient_id" value="{{data['patient_id']}}">
+                        <input type="hidden" name="patient_name" value="{{data['patient_name']}}">
+                        <input type="hidden" name="patient_age" value="{{data['patient_age']}}">
+                        <input type="hidden" name="date_of_join" value="{{data['date_of_join']}}">
+                        <input type="hidden" name="type_of_bed" value="{{data['type_of_bed']}}">
+                        <input type="hidden" name="address" value="{{data['address']}}">
+                        <input type="hidden" name="address" value="{{data['city']}}">
+                        <input type="hidden" name="address" value="{{data['state']}}">
+                    <button>Diagnostic-Test </button>
+                </form>
+                </td>
+            </tr>
+            {% endfor %}
+            
+            </tbody>
+        </table>
+    </div>
+    </div>
+    {% endblock %}

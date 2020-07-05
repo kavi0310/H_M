@@ -1,0 +1,27 @@
+
+{% extends "layout.html" %}
+
+{% block content %}
+
+
+<div class="row">
+    <div class="col-md-12 text-center">
+        <h1 style="color: darkmagenta;">ABC Hospital Management</h1></style>
+        <h3>Life is a most percious thing</h3>
+   
+            
+            {% for staff in staffs %}
+            <dl>
+                <dt>User ID: {{ staff.user_id}}</dt>
+                <dd>Name: {{staff.name}}</dd>
+                <dd>Password: {{staff.password}}</dd>
+            </dl>
+            {% else %}
+
+                <h3>No users yet!</h3>
+            {% endfor %}
+
+        </div>
+    </div>
+</div>
+{% endblock %}

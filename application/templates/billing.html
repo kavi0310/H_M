@@ -1,0 +1,70 @@
+
+    {% extends "layout.html" %}
+    
+    {% block content %}
+    <div class="col-md-12 text-center">
+        <h2 style="color: darkblue;">Patient Bill</h2></style>
+    <!--  Display the Term and Year here --->
+    <div>
+        </table>
+        <div class="col-md-12 text-center">
+            <h2 style="color: darkmagenta;">Medicines Issued</h2></style>
+            <div>
+                <br>
+                <table class="table table-hover">
+                    <thead>
+                    <tr>
+                        <th scope="col">Medicine</th>
+                        <th scope="col">Quantity</th>
+                        <th scope="col">Rate</th>
+                        <th scope="col">Amount</th>
+                    </tr>
+                    </thead>
+                </table>
+            </div>    
+            <button>Issue Medicines</button>
+            <br>
+            <div>
+                <table class="table table-hover">
+                    <thead>
+                    <tr>
+                        <th scope="col">Medicine</th>
+                        <th scope="col">Quantity</th>
+                        <th scope="col">Rate</th>
+                        <th scope="col">Amount</th>
+                    </tr>
+                    </thead>
+                </table>
+            </div> 
+            <button>Update</button>
+            <br>  
+            <br>
+        <div class="col-md-12 text-center">
+            <h2 style="color: darkmagenta;">Diagnostics Conducted</h2></style>
+            <div>
+                <br>
+                <table class="table table-hover">
+                    <thead>
+                    <tr>
+                        <th scope="col">Name of the Test</th>
+                        <th scope="col">Amount</th>
+                    </tr>
+                    </thead>
+                </table>
+            </div>    
+            <button>Add Diagnostics</button>
+            <br>
+            <div>
+                <table class="table table-hover">
+                    <thead>
+                    <tr>
+                        <th scope="col">Name of the Test</th>
+                        <th scope="col">Amount</th>
+                    </tr>
+                    </thead>
+                </table>
+            </div> 
+            <button>Update</button>  
+    </div>
+
+{% endblock %}

@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+    
+    {% block content %}
+    <div class="site-blocks-cover overlay" style="background-image: url('./static/images/medi1.jpg')" data-aos="fade" >
+    <div class="col-md-12 text-center">
+        <h2 style="color: white;">View Patient Medicine Details</h2></style>
+        <br>
+        <p> Medicine Name: {{ data.medicine_name }}</p>
+        <p> Quantity     : {{ data.quantity }}</p>
+        <p> Rate         : {{ data.rate }}</p>
+        <p> Amount       : {{ data.amount }}</p>
+
+        <!-- <div>
+            <table class="table table-hover">
+                <thead>
+                <tr>
+                    <th scope="col">medicine_name</th>
+                    <th scope="col">quantity</th>
+                    <th scope="col">rate</th>
+                    <th scope="col">amount</th>
+                </tr>
+                </thead>
+                <tbody>
+                Construct the rest of courses here -->
+                {% for data in MedicineDetails %}
+                <tr>
+                    <td scope='row'>{{ data["medicine_name"] }}</td>
+                    <td>{{ data["quantity"] }}</td>
+                    <td>{{ data["rate"] }}</td>
+                    <td>{{ data["amount"] }}</td>
+                    <td>
+                        <form action="{{url_for('medicine')}}" method="POST">
+                            <input type="hidden" name="medicine_name" value="{{data['medicine_name']}}">
+                            <input type="hidden" name="quantity" value="{{data['quantity']}}">
+                            <input type="hidden" name="rate" value="{{data['rate']}}">
+                            <input type="hidden" name="amount" value="{{data['amount']}}">
+                        <button>Bill </button>
+                    </form>
+                    </td>
+                </tr>
+                {% endfor %}
+                
+                </tbody>
+            </table>
+        </div> 
+    </div>
+</div>
+    {% endblock %}

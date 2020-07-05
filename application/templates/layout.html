@@ -1,0 +1,71 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ABC Hospital Managenent</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Icon image -->
+    <link rel="icon" href="https://www.softclinicsoftware.com/wp-content/uploads/2020/02/softclinic-favicon.png" type="image/x-icon">
+    <!-- old layout  -->
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/main.css')}}"/> -->
+<!-- Load icon library -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Favicon Icon -->
+<!-- <link rel="shortcut icon" type="image/x-icon" href="https://hmsdesk.com/assets/images/favicon.png"> -->
+<!-- Animation CSS -->
+<link rel="stylesheet" href="https://hmsdesk.com/assets/css/animate.css">	
+<!-- Latest Bootstrap min CSS -->
+<link rel="stylesheet" href="https://hmsdesk.com/assets/bootstrap/css/bootstrap.min.css">
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
+<!-- Icon Font -->
+<link href="https://hmsdesk.com/assets/css/ico-moon.css" rel="stylesheet">
+<!-- Icon Font CSS -->
+<link rel="stylesheet" href="https://hmsdesk.com/assets/css/ionicons.min.css">
+<link rel="stylesheet" href="https://hmsdesk.com/assets/css/themify-icons.css">
+<!-- FontAwesome CSS -->
+<link rel="stylesheet" href="https://hmsdesk.com/assets/css/all.min.css">
+<!--- owl carousel CSS-->
+<!-- <link rel="stylesheet" href="https://hmsdesk.com/assets/owlcarousel/css/owl.carousel.min.css">
+<link rel="stylesheet" href="https://hmsdesk.com/assets/owlcarousel/css/owl.theme.css">
+<link rel="stylesheet" href="https://hmsdesk.com/assets/owlcarousel/css/owl.theme.default.min.css"> -->
+<!-- Magnific Popup CSS -->
+<link rel="stylesheet" href="https://hmsdesk.com/assets/css/magnific-popup.css">
+<!-- Style CSS -->
+<link rel="stylesheet" href="https://hmsdesk.com/assets/css/style.css">
+<link rel="stylesheet" href="https://hmsdesk.com/assets/css/responsive.css">
+<link rel="stylesheet" id="layoutstyle" href="https://hmsdesk.com/assets/color/theme.css">
+
+
+</head>
+<body>
+
+<div class="container-fluid text-center top-container">
+    
+    <h1 style="color: darkcyan;">ABC Hospital Management</h1>
+</div>
+            
+<div class="container">
+    {% include "includes/nav.html" %}
+    
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+                <div class="alert alert-{{category}}">
+                    <p>{{ message }}</p>
+                </div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+
+    {% block content %}
+    {% endblock %}
+
+</div>
+    {% include "includes/footer.html" %}
+</body>
+</html>    

@@ -1,0 +1,69 @@
+
+    {% extends "layout.html" %}
+    
+    {% block content %}
+    <div class="site-blocks-cover overlay" style="background-image: url('./static/images/diag3.jpg')" data-aos="fade" >
+    <div class="col-md-12 text-center">
+        <h2 style="color: darkmagenta;">Diagnostics</h2></style>
+        <br>
+    </div>
+    <!--  Display the Term and Year here --->
+    
+    <div>
+        <table class="table table-hover">
+            <thead>
+            <tr>
+                <th scope="col">Test Name</th>
+                <th scope="col">Amount</th>
+            </tr>
+            </thead>
+            <tbody>
+
+            <!-- Construct the rest of courses here -->
+            {% for data in TestDetails %}
+            <tr>
+                <td scope='row'>{{ data["test_name"] }}</td>
+                <td>{{ data["amount"] }}</td>
+                <td>
+                    <form action="{{url_for('test')}}" method="POST">
+                        <input type="hidden" name="test_name" value="{{data['test_name']}}">
+                        <input type="hidden" name="amount" value="{{data['amount']}}">
+                    <button>Add </button>
+                </form>
+                </td>
+            </tr>
+            {% endfor %}
+            
+            </tbody>
+        </table>
+    </div>
+    </div>
+        <!-- <div class="col-md-12 text-center">
+            <h2 style="color: darkmagenta;">Diagnostics Conducted</h2></style>
+            <div>
+                <table class="table table-hover">
+                    <thead>
+                    <tr>
+                        <th scope="col">Name of the Test</th>
+                        <th scope="col">Amount</th>
+                    </tr>
+                    </thead>
+                </table>
+            </div>    
+            <button>Add Diagnostics</button>
+            <br>
+            <div>
+                <table class="table table-hover">
+                    <thead>
+                    <tr>
+                        <th scope="col">Name of the Test</th>
+                        <th scope="col">Amount</th>
+                    </tr>
+                    </thead>
+                </table>
+            </div> 
+            <button>Update</button>
+            <br>   
+    </div> -->
+
+{% endblock %}

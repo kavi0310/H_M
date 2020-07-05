@@ -1,0 +1,82 @@
+
+    {% extends "layout.html" %}
+    
+    {% block content %}
+    <div class="site-blocks-cover overlay" style="background-image: url('./static/images/pharma.jpg')" data-aos="fade" >
+    <div class="col-md-12 text-center">
+        <h2 style="color: darkmagenta;">Pharmacy</h2></style>
+        <br>
+        </div>
+    <!--  Display the Term and Year here --->
+    <div>
+        <table class="table table-hover">
+            <!-- <form class="example" action="/action_page.php">
+                <input type="text" placeholder="Search.." name="search">
+                <button type="submit"><i class="fa fa-search"></i></button>
+            </form> -->
+            <thead>
+            <tr>
+                <th scope="col">Medicine Name</th>
+                <th scope="col">Quantity</th>
+                <th scope="col">Rate</th>
+                <th scope="col">Amount</th>
+            </tr>
+            </thead>
+            <tbody>
+
+            <!-- Construct the rest of courses here -->
+            {% for data in MedicineDetails %}
+            <tr>
+                <td scope='row'>{{ data["medicine_name"] }}</td>
+                <td>{{ data["quantity"] }}</td>
+                <td>{{ data["rate"] }}</td>
+                <td>{{ data["amount"] }}</td>
+                <td>
+                    <form action="{{url_for('medicine')}}" method="POST">
+                        <input type="hidden" name="medicine_name" value="{{data['medicine_name']}}">
+                        <input type="hidden" name="quantity" value="{{data['quantity']}}">
+                        <input type="hidden" name="rate" value="{{data['rate']}}">
+                        <input type="hidden" name="amount" value="{{data['amount']}}">
+                    <button>Add </button>
+                </form>
+                </td>
+            </tr>
+            {% endfor %}
+            
+            </tbody>
+        </table>
+    </div>
+    </div>
+        <!-- <div class="col-md-12 text-center">
+            <h2 style="color: darkmagenta;">Medicines Issued</h2></style>
+            <div>
+                <table class="table table-hover">
+                    <thead>
+                    <tr>
+                        <th scope="col">Medicine</th>
+                        <th scope="col">Quantity</th>
+                        <th scope="col">Rate</th>
+                        <th scope="col">Amount</th>
+                    </tr>
+                    </thead>
+                </table>
+            </div>    
+            <button>Update</button>
+            <br>
+            <div>
+                <table class="table table-hover">
+                    <thead>
+                    <tr>
+                        <th scope="col">Medicine</th>
+                        <th scope="col">Quantity</th>
+                        <th scope="col">Rate</th>
+                        <th scope="col">Amount</th>
+                    </tr>
+                    </thead>
+                </table>
+            </div> 
+            <button>Update</button>
+            <br>   
+    </div> -->
+
+{% endblock %}

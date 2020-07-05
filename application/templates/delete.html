@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+   
+{% block content %}
+<div class="col-md-12 text-center">
+<h2 style="color: darkmagenta;">Delete Patient</h2></style>
+</div>
+<div class="container">
+    <div class="col-md-6 offset-md-3">
+        <h3></h3>
+    <form name="register" action="register.php" method="get">
+        <label for="Patient SSN ID"><b>Patient SSN ID</b></label>
+        <input type="text" placeholder="Enter Patient SSN ID" name="Patient SSN ID" required>
+        <br>
+        <label for="Patient Name"><b>Patient Name</b></label>
+        <input type="text" placeholder="Enter Patient Name" name="Patient Name" required>
+        <br>
+        <label for="Patient age"><b>Patient age</b></label>
+        <input type="text" placeholder="Enter Patient age" name="Patient age" required>
+        <br>
+        <label for="Date of Admission"><b>Date of Admission</b></label>
+        <input type="text" placeholder="Date of Admission" name="Date of Admission" required>
+        <br>
+        <label for="Type of Bed"><b>Type of Bed</b></label>
+        <select>
+            <option value="Select">Select</option>
+            <option value="General ward">General ward</option>
+            <option value="Semi sharing">Semi Sharing</option>
+            <option value="Single room">Single Room</option>
+        </select>
+        <br><br>
+        <label for="Address"><b>Address</b></label>
+        <input type="text" placeholder="Enter Address" name="Address" required>
+        <br>
+        <label for="City"><b>City</b></label>
+        <select>
+            <option value="Select">Select</option>
+            <option value="Erode">Erode</option>
+            <option value="Chennai">Chennai</option>>
+            <option value="Coimbatore">Coimbatore</option>
+        </select>
+        <br><br>
+        <label for="State"><b>State</b></label>
+        <select>
+            <option value="Select">Select</option>
+            <option value="Tamil Nadu">Tamil Nadu</option>
+            <option value="Kerala">Kerala</option>
+            <option value="Karnadaga">Karnadaga</option>
+        </select>
+        <br class="clear">
+        <input class="btn-submit" type="submit" name="Delete">
+    </form>
+    </div>
+</div>
+{% endblock %}
